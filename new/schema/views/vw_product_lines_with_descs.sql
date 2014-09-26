@@ -12,4 +12,4 @@ SELECT
   t1.is_active
 FROM sys_product_lines t1
 INNER JOIN sys_products t2 ON t1.product_id=t2.id
-INNER JOIN sys_product_measures t3 ON t1.product_measure_id=t3.id
+INNER JOIN sys_product_measures t3 ON t1.product_measure_id=t3.id;
