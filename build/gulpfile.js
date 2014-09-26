@@ -1,6 +1,8 @@
 var gulp = require('gulp');
 var print = require('gulp-print');
 var concat = require('gulp-concat');
+var gulpif = require('gulp-if');
+var replace = require('gulp-replace');
 var mysql = require('mysql');
 var argv = require('yargs').argv;
 var fs = require('fs');
@@ -50,6 +52,7 @@ gulp.task('create-script', function() {
       '../new/data/*.sql'
     ])
     .pipe(concat(createDatabaseFilename))
+    .pipe(gulpif(argv.database !== undefined, replace('%DATABASE%', argv.database)))
     .pipe(gulp.dest('./'));
 });
 
