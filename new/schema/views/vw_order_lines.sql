@@ -6,6 +6,7 @@ SELECT
   t1.id AS ruid,
   t1.vendor_id,
   t1.product_id,
+  t2.vendor_product_id,
   t2.product_name,
   t1.product_type_id,
   t3.product_type_name,
