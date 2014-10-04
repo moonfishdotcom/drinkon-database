@@ -5,6 +5,7 @@ SELECT
   t1.id, 
   t2.vendor_id, 
   t1.product_id, 
+  t2.vendor_product_id, 
   t2.product_name, 
   t1.product_measure_id, 
   t3.product_measure_name,
