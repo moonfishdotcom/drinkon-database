@@ -1,5 +1,7 @@
-INSERT INTO sys_order_statuses (order_status_name, is_active)
+INSERT INTO sys_order_statuses (id, order_status_name, is_active)
 VALUES
-('Accepted', TRUE),
-('Waiting', TRUE),
-('Complete', TRUE);
+(1, 'Accepted', TRUE),
+(2, 'Waiting', TRUE),
+(3, 'Complete', TRUE),
+(4, 'Pending', TRUE);
+
