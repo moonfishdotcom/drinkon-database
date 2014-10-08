@@ -6,5 +6,6 @@ CREATE TABLE sys_product_types
   vendor_id INT,
   product_type_name NVARCHAR(100),
   is_active BIT,
+  is_fixed BIT,
   PRIMARY KEY (id)
 );
