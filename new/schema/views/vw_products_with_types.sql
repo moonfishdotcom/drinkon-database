@@ -9,7 +9,8 @@ SELECT
   t1.product_type_id,
   t2.product_type_name, 
   t1.product_status_id, 
-  t1.is_active, 
+  t1.is_active,
+  t1.is_fixed,
   t1.id AS ruid
 FROM sys_products t1 
 INNER JOIN sys_product_types t2 ON t1.product_type_id=t2.id;

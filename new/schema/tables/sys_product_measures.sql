@@ -7,5 +7,6 @@ CREATE TABLE sys_product_measures
   product_type_id INT,
   product_measure_name NVARCHAR(100),
   is_active BIT,
+  is_fixed BIT,
   PRIMARY KEY (id)
 );

@@ -10,5 +10,6 @@ CREATE TABLE sys_products
   product_type_id INT,
   product_status_id INT,
   is_active BIT,
+  is_fixed BIT,
   PRIMARY KEY (id)
 );
