@@ -2,7 +2,8 @@ DROP VIEW IF EXISTS vw_vendor_patterns;
 
 CREATE VIEW vw_vendor_patterns AS 
 SELECT 
-  vendor_id AS id, 
+  id,
+  vendor_id, 
   pattern_name, 
   is_active, 
   id AS ruid 

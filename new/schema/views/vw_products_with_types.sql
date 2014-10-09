@@ -2,7 +2,8 @@ DROP VIEW IF EXISTS vw_products_with_types;
 
 CREATE VIEW vw_products_with_types AS
 SELECT
-  t1.vendor_id AS id, 
+  t1.id,
+  t1.vendor_id,
   t1.vendor_product_id, 
   t1.product_name, 
   t1.product_desc, 

@@ -2,7 +2,8 @@ DROP VIEW IF EXISTS dv_sys_product_types;
 
 CREATE VIEW dv_sys_product_types AS
 SELECT 
-  vendor_id AS id, 
+  id,
+  vendor_id, 
   product_type_name, 
   is_active, 
   is_fixed,
