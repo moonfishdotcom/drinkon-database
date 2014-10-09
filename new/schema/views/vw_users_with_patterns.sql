@@ -9,7 +9,6 @@ SELECT
   t1.user_known_as, 
   t1.user_pattern_id,
   t2.pattern_name, 
-  t1.is_active, 
-  t1.id AS ruid
+  t1.is_active
 FROM sys_users t1 
 INNER JOIN sys_user_patterns t2 ON t1.user_pattern_id=t2.id;

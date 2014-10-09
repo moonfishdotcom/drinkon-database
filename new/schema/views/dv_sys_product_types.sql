@@ -6,7 +6,6 @@ SELECT
   vendor_id, 
   product_type_name, 
   is_active, 
-  is_fixed,
-  id AS ruid 
+  is_fixed
 FROM sys_product_types 
 ORDER BY id ASC;

@@ -5,7 +5,6 @@ SELECT
   id,
   vendor_id, 
   pattern_name, 
-  is_active, 
-  id AS ruid 
+  is_active
 FROM sys_user_patterns 
 ORDER BY id ASC;

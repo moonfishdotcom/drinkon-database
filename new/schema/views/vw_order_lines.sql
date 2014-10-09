@@ -2,8 +2,8 @@ DROP VIEW IF EXISTS vw_order_lines;
 
 CREATE VIEW vw_order_lines AS
 SELECT
-  t1.order_id AS id,
-  t1.id AS ruid,
+  t1.id,
+  t1.order_id,
   t1.vendor_id,
   t1.product_id,
   t2.vendor_product_id,
