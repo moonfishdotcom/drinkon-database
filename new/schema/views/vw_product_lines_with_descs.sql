@@ -2,15 +2,18 @@ DROP VIEW IF EXISTS vw_product_lines_with_descs;
 
 CREATE VIEW vw_product_lines_with_descs AS
 SELECT
-  t1.id, 
-  t2.vendor_id, 
-  t1.product_id, 
-  t2.vendor_product_id, 
-  t2.product_name, 
-  t1.product_measure_id, 
-  t3.product_measure_name,
-  t1.product_unit_price, 
-  t1.is_active
-FROM sys_product_lines t1
-INNER JOIN sys_products t2 ON t1.product_id=t2.id
-INNER JOIN sys_product_measures t3 ON t1.product_measure_id=t3.id;
+  pl.id, 
+  p.vendor_id, 
+  pl.product_id, 
+  p.vendor_product_id,
+  p.product_name, 
+  pl.product_measure_id, 
+  pm.product_measure_name,
+  pl.product_unit_price,
+  p.product_type_id,
+  pt.product_type_name
+FROM sys_product_lines pl
+INNER JOIN sys_products p ON pl.product_id = p.id
+INNER JOIN sys_product_measures pm ON pl.product_measure_id = pm.id
+INNER JOIN sys_product_types pt ON p.product_type_id = pt.id
+WHERE p.is_active = 1;

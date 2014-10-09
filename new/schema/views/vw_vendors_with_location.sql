@@ -2,17 +2,23 @@ DROP VIEW IF EXISTS vw_vendors_with_location;
 
 CREATE VIEW vw_vendors_with_location AS
 SELECT
-  t1.id, 
-  t1.vendor_name, 
-  t1.vendor_addr1, 
-  t1.vendor_addr2, 
-  t1.vendor_addr3, 
-  t1.vendor_addr4,
-  t1.vendor_postcode, 
-  t1.vendor_phone, 
-  t1.vendor_fax, 
-  t1.vendor_email,
-  t1.location_id, 
-  t2.location_name
-FROM sys_vendors t1
-LEFT OUTER JOIN sys_locations t2 on t1.location_id=t2.id;
+  v.id vendor_id, 
+  v.vendor_name, 
+  v.vendor_addr1, 
+  v.vendor_addr2, 
+  v.vendor_addr3, 
+  v.vendor_addr4,
+  v.vendor_postcode, 
+  v.vendor_phone, 
+  v.vendor_fax, 
+  v.vendor_email,
+  v.location_id, 
+  l.location_name,
+  d.id description_id,
+  d.vendor_image, 
+  d.vendor_line1, 
+  d.vendor_line2, 
+  d.vendor_line3
+FROM sys_vendors v
+INNER JOIN sys_locations l on v.location_id = l.id
+LEFT OUTER JOIN sys_vendors_description d ON v.id = d.vendor_id;

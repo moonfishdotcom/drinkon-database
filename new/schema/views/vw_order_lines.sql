@@ -2,20 +2,19 @@ DROP VIEW IF EXISTS vw_order_lines;
 
 CREATE VIEW vw_order_lines AS
 SELECT
-  t1.id,
-  t1.order_id,
-  t1.vendor_id,
-  t1.product_id,
-  t2.vendor_product_id,
-  t2.product_name,
-  t1.product_type_id,
-  t3.product_type_name,
-  t1.product_measure_id,
-  t4.product_measure_name,
-  t1.product_qty,
-  t1.product_unit_price,
-  t1.is_active
-FROM sys_order_lines t1
-INNER JOIN sys_products t2 ON t1.product_id = t2.id
-INNER JOIN sys_product_types t3 ON t1.product_type_id = t3.id
-INNER JOIN sys_product_measures t4 ON t1.product_measure_id = t4.id;
+  l.id,
+  l.order_id,
+  l.product_id,
+  p.vendor_product_id,
+  p.product_name,
+  l.product_type_id,
+  t.product_type_name,
+  l.product_measure_id,
+  m.product_measure_name,
+  l.product_qty,
+  l.product_unit_price,
+  l.is_active
+FROM sys_order_lines l
+INNER JOIN sys_products p ON l.product_id = p.id
+INNER JOIN sys_product_types t ON l.product_type_id = t.id
+INNER JOIN sys_product_measures m ON l.product_measure_id = m.id;
