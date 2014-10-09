@@ -36,14 +36,20 @@ function getMySqlCommand() {
 
 // This task concatenates the individual schema files to create a single create database script
 gulp.task('create-script', function() {
-  return gulp.src([
+  var scriptSources = [
       '../new/schema/database.sql',
       '../new/schema/tables/*.sql',
       '../new/schema/views/*.sql',
       '../new/schema/procs/*.sql',
       '../new/schema/functions/*.sql',
-      '../new/data/*.sql'
-    ])
+      '../new/data/static/*.sql'
+      ];
+
+  if (!!argv.data) {
+    scriptSources.push('../new/data/demo/' + argv.data + '.sql');
+  }
+
+  return gulp.src(scriptSources)
     .pipe(concat(scriptFile))
     .pipe(gulpif(argv.database !== undefined, replace('%DATABASE%', argv.database)))
     .pipe(gulp.dest('./'));

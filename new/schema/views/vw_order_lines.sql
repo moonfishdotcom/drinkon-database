@@ -4,7 +4,6 @@ CREATE VIEW vw_order_lines AS
 SELECT
   l.id,
   l.order_id,
-  l.vendor_id,
   l.product_id,
   p.vendor_product_id,
   p.product_name,
