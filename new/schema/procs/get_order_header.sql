@@ -7,7 +7,7 @@ CREATE PROCEDURE get_order_header (
 BEGIN
 
   SELECT *
-  FROM vw_order_header
+  FROM vw_order_header_with_totals
   WHERE id = param_order_id;
 
 END //

@@ -8,7 +8,7 @@ BEGIN
 
   SELECT *
   FROM vw_order_lines
-  WHERE id = param_order_id;
+  WHERE order_id = param_order_id;
 
 END //
 
