@@ -1,7 +1,7 @@
 DELIMITER //
-DROP PROCEDURE IF EXISTS add_line_to_order //
+DROP PROCEDURE IF EXISTS add_order_line //
 
-CREATE PROCEDURE add_line_to_order (
+CREATE PROCEDURE add_order_line (
   param_order_id integer, 
   param_product_id integer, 
   param_product_measure_id integer,

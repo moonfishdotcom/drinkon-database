@@ -7,7 +7,7 @@ SELECT
   l.product_id,
   p.vendor_product_id,
   p.product_name,
-  l.product_type_id,
+  p.product_type_id,
   t.product_type_name,
   l.product_measure_id,
   m.product_measure_name,
@@ -16,5 +16,5 @@ SELECT
   l.is_active
 FROM sys_order_lines l
 INNER JOIN sys_products p ON l.product_id = p.id
-INNER JOIN sys_product_types t ON l.product_type_id = t.id
+INNER JOIN sys_product_types t ON p.product_type_id = t.id
 INNER JOIN sys_product_measures m ON l.product_measure_id = m.id;
