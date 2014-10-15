@@ -5,9 +5,10 @@ VALUES
 ('Ms', TRUE),
 ('Miss', TRUE);
 
-INSERT INTO sys_customers (customer_title_id, customer_forename, customer_surname, customer_last_order_date, username, password)
+INSERT INTO sys_customers (id, username, password, display_name, is_active)
 VALUES
-(1, 'Bill', 'Johnson', null, 'b', 'bb');
+(1, 'b', 'bb', 'Bill Johnson', TRUE),
+(2, 'r', 'rr', 'ruffian99', TRUE);
 
 INSERT INTO sys_locations (id, location_name)
 VALUES
