@@ -11,5 +11,6 @@ CREATE TABLE sys_products
   product_status_id INT,
   is_active BIT,
   is_fixed BIT,
+  image_name varchar(50),
   PRIMARY KEY (id)
 );

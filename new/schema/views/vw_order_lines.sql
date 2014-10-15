@@ -7,8 +7,10 @@ SELECT
   ol.product_id,
   p.vendor_product_id,
   p.product_name,
-  ol.product_type_id,
+  p.image_name product_image_name,
+  p.product_type_id,
   t.product_type_name,
+  t.image_name product_type_image_name,
   ol.product_measure_id,
   m.product_measure_name,
   ol.product_qty,
@@ -18,6 +20,6 @@ SELECT
 FROM sys_order_lines ol
 INNER JOIN sys_order_header oh ON oh.id = ol.order_id
 INNER JOIN sys_products p ON ol.product_id = p.id
-INNER JOIN sys_product_types t ON ol.product_type_id = t.id
+INNER JOIN sys_product_types t ON p.product_type_id = t.id
 INNER JOIN sys_product_measures m ON ol.product_measure_id = m.id
 INNER JOIN sys_product_lines pl ON ol.product_id = pl.product_id AND ol.product_measure_id = pl.product_measure_id AND pl.vendor_id = oh.vendor_id;
