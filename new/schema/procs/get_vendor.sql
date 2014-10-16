@@ -6,9 +6,13 @@ CREATE PROCEDURE get_vendor (
 )
 BEGIN
 
-  SELECT *, 500 vendor_distance, 1 vendor_sellsfood, 1 vendor_sellsdrink
+  SELECT *, 
+    FLOOR(0 + RAND() * 1000) vendor_distance, 
+    FLOOR(0 + RAND() * 2) vendor_sells_food, 
+    FLOOR(0 + RAND() * 2) vendor_sells_drink, 
+    FLOOR(0 + RAND() * 2) vendor_sells_alcohol
   FROM vw_vendors_with_location
-  WHERE vendor_id = param_vendor_id;
+  WHERE vendor_id = IFNULL(param_vendor_id, vendor_id);
 
 END //
 
