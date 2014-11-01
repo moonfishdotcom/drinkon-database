@@ -8,6 +8,7 @@ CREATE TABLE sys_users
   user_name NVARCHAR(100),
   user_known_as NVARCHAR(20),
   user_pattern_id INT,
+  user_role_id INT,
   is_active BIT,
   PRIMARY KEY (id)
 );
