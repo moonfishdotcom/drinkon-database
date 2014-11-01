@@ -12,6 +12,9 @@ CREATE TABLE sys_vendors
   vendor_phone NVARCHAR(20),
   vendor_fax NVARCHAR(20),
   vendor_email NVARCHAR(100),
+  vendor_web NVARCHAR(100),
+  vendor_twitter NVARCHAR(100),
+  vendor_facebook NVARCHAR(100),
   location_id INT,
   is_active BIT,
   PRIMARY KEY (id)
