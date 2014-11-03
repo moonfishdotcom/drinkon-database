@@ -7,6 +7,7 @@ CREATE TABLE sys_product_lines
   product_id INT,
   product_measure_id INT,
   product_unit_price DECIMAL(5,2),
+  product_stock_id NVARCHAR(10),
   is_active BIT,
   PRIMARY KEY (id)
 );
