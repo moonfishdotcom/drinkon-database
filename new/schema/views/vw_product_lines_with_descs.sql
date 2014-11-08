@@ -11,6 +11,7 @@ SELECT
   pl.product_measure_id, 
   pm.product_measure_name,
   pl.product_unit_price,
+  pl.product_stock_id,
   p.product_type_id,
   pt.product_type_name,
   pt.image_name product_type_image_name,
